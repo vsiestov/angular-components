@@ -1,0 +1,17 @@
+.popup__menu {
+    min-width: 200px;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    margin: 10px 0 0 0;
+}
+
+.popup__menu-item {
+    color: #444;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 30px;
+    text-transform: uppercase;
+    padding: 3px 14px;
+}

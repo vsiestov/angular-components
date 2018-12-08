@@ -1,0 +1,7 @@
+<button [appMenuTrigger]="menu">Show menu</button>
+
+<app-menu #menu="menu">
+  <app-menu-item *ngFor="let item of list" (click)="onChooseItem(item)">
+    {{ item.title }}
+  </app-menu-item>
+</app-menu>

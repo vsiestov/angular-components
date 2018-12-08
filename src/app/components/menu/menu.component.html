@@ -1,0 +1,14 @@
+<ng-template>
+  <div
+    role="menu"
+    tabindex="-1"
+    [id]="id"
+    [attr.aria-label]="label"
+    (click)="clicked.emit('clicked')"
+    (keydown)="keyDownHandler($event)"
+    [@showMenu]="animationState"
+    class="popup__menu"
+  >
+    <ng-content></ng-content>
+  </div>
+</ng-template>
