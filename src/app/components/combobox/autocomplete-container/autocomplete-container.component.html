@@ -1,0 +1,10 @@
+<div
+  role="combobox"
+  [attr.aria-expanded]="isExpanded"
+  [attr.aria-owns]="ariaOwns"
+  aria-haspopup="listbox"
+  (keydown)="handleKeyDown($event)"
+  class="combobox"
+>
+  <ng-content></ng-content>
+</div>

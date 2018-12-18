@@ -1,0 +1,54 @@
+<div class="columns">
+
+  <div class="column">
+    <app-autocomplete-container [autocomplete]="auto" [control]="input" [label]="label">
+      <label #label for="input-search">Default autocomplete</label>
+      <input #input id="input-search" type="search">
+
+      <app-autocomplete #auto="autocomplete">
+        <app-autocomplete-item>Item 1</app-autocomplete-item>
+        <app-autocomplete-item>Item 2</app-autocomplete-item>
+        <app-autocomplete-item>Item 3</app-autocomplete-item>
+        <app-autocomplete-item>Item 4</app-autocomplete-item>
+      </app-autocomplete>
+
+    </app-autocomplete-container>
+  </div>
+
+  <div class="column">
+    <form>
+      <app-autocomplete-container [autocomplete]="auto1" [control]="input1" [label]="label1">
+        <label #label1 for="input-search-filter">Search as your type</label>
+        <input #input1 id="input-search-filter" name="value" type="search" [(ngModel)]="form.value" autocomplete="off">
+
+        <app-autocomplete #auto1="autocomplete">
+          <app-autocomplete-item *ngFor="let item of list | filter: input1.value">{{ item.title }}</app-autocomplete-item>
+        </app-autocomplete>
+
+      </app-autocomplete-container>
+    </form>
+
+    <br>
+    <div>
+      {{ form | json }}
+    </div>
+  </div>
+
+  <div class="column">
+    <form [formGroup]="formGroup">
+      <app-autocomplete-container [autocomplete]="auto2" [control]="input2" [label]="label2">
+        <label #label2 for="input-search-many">Combobox with many items in the dropdown list</label>
+        <input #input2 id="input-search-many" name="value" type="search" formControlName="many" autocomplete="off">
+
+        <app-autocomplete #auto2="autocomplete">
+          <app-autocomplete-item *ngFor="let item of many | filter: input2.value">{{ item.title }}</app-autocomplete-item>
+        </app-autocomplete>
+
+      </app-autocomplete-container>
+
+      {{ formGroup.value | json }}
+    </form>
+  </div>
+
+</div>
+

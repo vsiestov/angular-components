@@ -1,0 +1,11 @@
+<ng-template>
+  <div
+    class="autocomplete"
+    role="listbox"
+    [id]="id"
+    [attr.aria-labelledby]="labelledBy"
+    (click)="closed.emit('clicked')"
+  >
+    <ng-content></ng-content>
+  </div>
+</ng-template>

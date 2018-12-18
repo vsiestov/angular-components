@@ -80,7 +80,7 @@ export class MenuTriggerDirective implements AfterViewInit, OnDestroy {
 
     this.appMenuTrigger.keyManager
       .setFocusOrigin('program')
-      .setFirstItemActive();;
+      .setFirstItemActive();
 
     merge(
       this.overlayRef.backdropClick(),

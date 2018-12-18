@@ -5,3 +5,16 @@
     {{ item.title }}
   </app-menu-item>
 </app-menu>
+
+
+<button [appMenuTrigger]="menu2">Show another menu</button>
+
+
+<app-menu #menu2="menu">
+  <app-menu-item>
+    Another menu item
+  </app-menu-item>
+  <app-menu-item>
+    And one more
+  </app-menu-item>
+</app-menu>
